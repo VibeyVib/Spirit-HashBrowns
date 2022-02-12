@@ -1,14 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:google_fonts/google_fonts.dart';
+//import 'google_sheets_api.dart';
 import 'package:spirit/feature/authentication/start_page.dart';
+
+import 'package:spirit/feature/budget/google_sheets_api.dart';
+
 import 'package:spirit/feature/nutrition/nutrientfacts.dart';
 import 'src/ui/splash.dart';
+
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
   Paint.enableDithering=true;
   await Firebase.initializeApp();
+  GoogleSheetsApi().init();
   runApp(const MyApp());
 }
 final nutrientData={
