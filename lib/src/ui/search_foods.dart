@@ -289,6 +289,8 @@ class SearchFoodsState extends State<SearchFoods> {
   }
 
   openDetailPage(SearchItem data, int index) {
+    print("Hippo");
+    print(data.foods[index].fdcId);
     final page = FoodDetailBlocProvider(
       //key: nu
       key: Key('gaja'),

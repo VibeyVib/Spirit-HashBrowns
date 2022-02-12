@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    /*return MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Spirit',
       theme: ThemeData(
@@ -36,9 +36,9 @@ class MyApp extends StatelessWidget {
       //home: Calendar(),
 
       //temp:
-     home: app(),
+     home: StartPage(),
 
-    );*/
+    );/*
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Nutrition Facts',
@@ -48,7 +48,7 @@ class MyApp extends StatelessWidget {
           primaryColor: Colors.black,
           accentColor: Colors.white,
         ),
-        home: Splash());
+        home: Splash());*/
   }
 }
 

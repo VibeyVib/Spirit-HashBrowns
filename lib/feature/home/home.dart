@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:spirit/feature/authentication/signin_bloc.dart';
 import 'package:spirit/feature/budget/budget.dart';
+import 'package:spirit/Nutrition/foods.dart';
 import 'package:spirit/feature/mental_health/mental_health.dart';
 import 'package:spirit/feature/nutrition/nutrition.dart';
 
@@ -17,7 +18,7 @@ class _HomePageState extends State<HomePage> {
   int _selectedIndex = 0;
   static const List<Widget> _widgetOptions = <Widget>[
    MentalHealth(),
-    Nutrition(),
+    Food(),
     Budget(),
   ];
   void _onItemTapped(int index) {
