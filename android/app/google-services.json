@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1058703820262",
+    "project_id": "spirit-bb136",
+    "storage_bucket": "spirit-bb136.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1058703820262:android:402e5b5b040b207859c227",
+        "android_client_info": {
+          "package_name": "com.example.spirit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1058703820262-p3f3g8juhnjt56v71bugo4jdahvn6qf4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.spirit",
+            "certificate_hash": "045a5268d0d00ecc66b1f245c5124c1af10858e0"
+          }
+        },
+        {
+          "client_id": "1058703820262-rgpdkkucvg778ptdgopen6it63ek5757.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCEzTJiVovWUm_L4UGAiqB6itA4LFrG684"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1058703820262-rgpdkkucvg778ptdgopen6it63ek5757.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
