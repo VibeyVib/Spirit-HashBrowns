@@ -26,29 +26,19 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    /*return MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Spirit',
       theme: ThemeData(
         textTheme: GoogleFonts.urbanistTextTheme(),
-        primaryColor: Color(0xffAEFEFF),
+        //primaryColor: Color(0xffAEFEFF),
       ),
       //home: Calendar(),
 
       //temp:
-     home: app(),
+     home: StartPage(),
 
-    );*/
-    return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: 'Nutrition Facts',
-        theme: ThemeData(
-          primarySwatch: Colors.grey,
-          visualDensity: VisualDensity.adaptivePlatformDensity,
-          primaryColor: Colors.black,
-          accentColor: Colors.white,
-        ),
-        home: Splash());
+    );
   }
 }
 
