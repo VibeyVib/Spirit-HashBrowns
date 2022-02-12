@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:spirit/feature/authentication/signin_bloc.dart';
 
 class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);
@@ -9,6 +10,9 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
+  SignInBloc _signInBloc=SignInBloc();
+  String email='';
+  String password='';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -50,6 +54,11 @@ class _LoginState extends State<Login> {
             ),
           ),
           TextFormField(
+            onChanged: (String text){
+              setState(() {
+                email=text;
+              });
+            },
             decoration: const InputDecoration(
               border: UnderlineInputBorder(
               ),
@@ -62,6 +71,11 @@ class _LoginState extends State<Login> {
             ),
           ),
           TextFormField(
+            onChanged: (String text){
+              setState(() {
+                password=text;
+              });
+            },
             obscureText: true,
             decoration: const InputDecoration(
               border: UnderlineInputBorder(
@@ -79,10 +93,7 @@ class _LoginState extends State<Login> {
                 backgroundColor: MaterialStateProperty.all(Colors.black)
             ),
             onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => Login()),
-              );
+              _signInBloc.signIn(context, email, password);
             },
             child: Container(
               width: 150.0,
