@@ -6,14 +6,14 @@ import 'plus_button.dart';
 import 'top_card.dart';
 import 'transaction.dart';
 
-class Budget extends StatefulWidget {
-  const Budget({Key? key}) : super(key: key);
+class HomePage extends StatefulWidget {
+  const HomePage({Key? key}) : super(key: key);
 
   @override
-  _BudgetState createState() => _BudgetState();
+  _HomePageState createState() => _HomePageState();
 }
 
-class _BudgetState extends State<Budget> {
+class _HomePageState extends State<HomePage> {
   // collect user input
   final _textcontrollerAMOUNT = TextEditingController();
   final _textcontrollerITEM = TextEditingController();
@@ -69,7 +69,7 @@ class _BudgetState extends State<Budget> {
                               child: TextFormField(
                                 decoration: InputDecoration(
                                   border: OutlineInputBorder(),
-                                  hintText: 'Amount',
+                                  hintText: 'Amount?',
                                 ),
                                 validator: (text) {
                                   if (text == null || text.isEmpty) {
@@ -113,7 +113,7 @@ class _BudgetState extends State<Budget> {
                   ),
                   MaterialButton(
                     color: Colors.grey[600],
-                    child: Text('Log', style: TextStyle(color: Colors.white)),
+                    child: Text('Enter', style: TextStyle(color: Colors.white)),
                     onPressed: () {
                       if (_formKey.currentState!.validate()) {
                         _enterTransaction();

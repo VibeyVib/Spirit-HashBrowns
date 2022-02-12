@@ -1,14 +1,21 @@
+
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:google_fonts/google_fonts.dart';
+//import 'google_sheets_api.dart';
 import 'package:spirit/feature/authentication/start_page.dart';
+
+import 'package:spirit/feature/budget/google_sheets_api.dart';
+
 import 'package:spirit/feature/nutrition/nutrientfacts.dart';
 import 'src/ui/splash.dart';
+
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
   Paint.enableDithering=true;
   await Firebase.initializeApp();
+  GoogleSheetsApi().init();
   runApp(const MyApp());
 }
 final nutrientData={
@@ -31,24 +38,13 @@ class MyApp extends StatelessWidget {
       title: 'Spirit',
       theme: ThemeData(
         textTheme: GoogleFonts.urbanistTextTheme(),
-        primaryColor: Color(0xffAEFEFF),
+        //primaryColor: Color(0xffAEFEFF),
       ),
       //home: Calendar(),
 
       //temp:
-     home: StartPage(),
+      home: StartPage(),
 
-    );/*
-    return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: 'Nutrition Facts',
-        theme: ThemeData(
-          primarySwatch: Colors.grey,
-          visualDensity: VisualDensity.adaptivePlatformDensity,
-          primaryColor: Colors.black,
-          accentColor: Colors.white,
-        ),
-        home: Splash());*/
+    );
   }
 }
-
