@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:spirit/feature/authentication/signin_bloc.dart';
+import 'package:spirit/feature/budget/budget.dart';
+import 'package:spirit/feature/mental_health/mental_health.dart';
+import 'package:spirit/feature/nutrition/nutrition.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -11,6 +14,17 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   SignInBloc _signInBloc=SignInBloc();
+  int _selectedIndex = 0;
+  static const List<Widget> _widgetOptions = <Widget>[
+   MentalHealth(),
+    Nutrition(),
+    Budget(),
+  ];
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,11 +46,61 @@ class _HomePageState extends State<HomePage> {
             _signInBloc.signOut(context);
           }, icon: Icon(Icons.close, color: Colors.red,))
         ],
+
+      ),
+      //body: Center(),
+      bottomNavigationBar: BottomNavigationBar(
+          items: <BottomNavigationBarItem>[
+            BottomNavigationBarItem(
+                icon: Container(
+                  width: 30,
+                  height: 30,
+                  child: SvgPicture.asset(
+                    "assets/images/mental_health_icon.svg",
+                    color: Colors.white,
+                  ),
+                ),
+               label: 'Mental Health',
+                backgroundColor: Colors.black
+            ),
+            BottomNavigationBarItem(
+                icon: Container(
+                  width: 30,
+                  height: 30,
+                  child: SvgPicture.asset(
+                    "assets/images/nutrition_icon.svg",
+                    color: Colors.white,
+                  ),
+                ),
+                label: 'Nutrition',
+                backgroundColor: Color(0xff35858b)
+            ),
+            BottomNavigationBarItem(
+              icon: Container(
+                width: 30,
+                height: 30,
+                child: SvgPicture.asset(
+                  "assets/images/budget_icon.svg",
+                  color: Colors.white,
+                ),
+              ),
+              label: 'Budget',
+              backgroundColor: Color(0xff4fbdba),
+            ),
+          ],
+          type: BottomNavigationBarType.shifting,
+          currentIndex: _selectedIndex,
+          selectedItemColor: Colors.black,
+          iconSize: 40,
+          onTap: _onItemTapped,
+          elevation: 5
       ),
     );
   }
 
-  _buildContent() {
-
+Widget  _buildContent() {
+return Center(
+  child: _widgetOptions.elementAt(_selectedIndex),
+);
   }
 }
