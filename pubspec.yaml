@@ -36,8 +36,13 @@ dependencies:
   gsheets: ^0.3.2
   cloud_firestore: ^3.1.8
   flutter_svg:
+<<<<<<< HEAD
   sms_receiver: ^0.4.1
   telephony: ^0.1.4
+=======
+  dialog_flowtter: ^0.3.1
+
+>>>>>>> 93cc68c574b51f0f391c52f2aa8fbe8043d39dd5
   rxdart: ^0.27.3
 
   # The following adds the Cupertino Icons font to your application.

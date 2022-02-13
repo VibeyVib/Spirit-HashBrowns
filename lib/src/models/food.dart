@@ -46,6 +46,7 @@ class Food {
       this.labelNutrients});
 
   Food.fromJson(Map<String, dynamic> json) {
+
     fdcId = json['fdcId']??0;
     description = json['description']??"";
     lowercaseDescription = json['lowercaseDescription']??"";
@@ -60,12 +61,13 @@ class Food {
     brandedFoodCategory = json['brandedFoodCategory']??"";
     gtinUpc = json['gtinUpc']??"";
     householdServingFullText = json['householdServingFullText']??"";
-    ingredients = json['ingredients']??"";
+    ingredients = json['ingredients']??"MAMAA";
+    print("Hello"+ingredients);
     marketCountry = json['marketCountry']??"";
     servingSize = json['servingSize']??0.0;
     servingSizeUnit = json['servingSizeUnit']??"";
     labelNutrients = (json['labelNutrients'] != null
-        ? new LabelNutrients.fromJson(json['labelNutrients'])
+        ? LabelNutrients.fromJson(json['labelNutrients'])
         : null);
   }
 

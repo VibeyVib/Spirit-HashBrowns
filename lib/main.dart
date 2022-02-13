@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -37,11 +38,12 @@ class MyApp extends StatelessWidget {
       title: 'Spirit',
       theme: ThemeData(
         textTheme: GoogleFonts.urbanistTextTheme(),
-        primaryColor: Color(0xffAEFEFF),
+        //primaryColor: Color(0xffAEFEFF),
       ),
       //home: Calendar(),
 
       //temp:
+<<<<<<< HEAD
      home: StartPage(),
 
     );
@@ -55,6 +57,10 @@ class MyApp extends StatelessWidget {
           accentColor: Colors.white,
         ),
         home: Splash());*/
+=======
+      home: StartPage(),
+
+    );
+>>>>>>> 93cc68c574b51f0f391c52f2aa8fbe8043d39dd5
   }
 }
-

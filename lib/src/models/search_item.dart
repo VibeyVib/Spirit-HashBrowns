@@ -13,9 +13,11 @@ class SearchItem {
     currentPage = json['currentPage'];
     totalPages = json['totalPages'];
     if (json['foods'] != null) {
+      print("Search:");
+      print(json['foods']);
       foods =  <Food>[];
       json['foods'].forEach((v) {
-        foods.add(new Food.fromJson(v));
+        foods.add(Food.fromJson(v));
       });
     }
   }
@@ -26,7 +28,11 @@ class SearchItem {
     data['currentPage'] = this.currentPage;
     data['totalPages'] = this.totalPages;
     if (this.foods != null) {
+      print("foods now:");
+      print(this.foods);
       data['foods'] = this.foods.map((v) => v.toJson()).toList();
+      print("Hi");
+      print(data);
     }
     return data;
   }

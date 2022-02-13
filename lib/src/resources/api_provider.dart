@@ -21,7 +21,7 @@ class ApiProvider {
     //print(response.body);
 
     if (response.statusCode == 200) {
-      //print("SUCESSSSSSSSS");
+      print("SUCESSSSSSSSS");
       // If the call to the server was successful, parse the JSON
       return SearchItem.fromJson(json.decode(response.body));
     } else {

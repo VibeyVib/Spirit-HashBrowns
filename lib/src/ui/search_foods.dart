@@ -69,54 +69,13 @@ class SearchFoodsState extends State<SearchFoods> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-          backgroundColor: Theme.of(context).primaryColor,
-          actions: <Widget>[
-            if (hasSearchableQuery)
-              IconButton(
-                icon: Stack(children: <Widget>[
-                  Icon(
-                    Icons.sort,
-                    color: Colors.white,
-                  ),
-                  if (sortBy != SortByEnum.score.name ||
-                      sortOrder != SortOrderEnum.asc.name)
-                    Positioned(
-                      top: 0.0,
-                      right: 0.0,
-                      child: Icon(Icons.brightness_1,
-                          size: 8.0, color: Colors.redAccent),
-                    )
-                ]),
-                onPressed: () {
-                  sortingModalBottomSheet(context, sortingCallback);
-                },
-              ),
-            if (hasSearchableQuery)
-              IconButton(
-                icon: Stack(children: <Widget>[
-                  Icon(
-                    Icons.filter_list_alt,
-                    color: Colors.white,
-                  ),
-                  if (dataTypes.isBrandedSelected ||
-                      dataTypes.isFoundationSelected ||
-                      dataTypes.isSRLegacySelected ||
-                      dataTypes.isSurveySelected ||
-                      brandName.isNotEmpty)
-                    Positioned(
-                      top: 0.0,
-                      right: 0.0,
-                      child: Icon(Icons.brightness_1,
-                          size: 8.0, color: Colors.redAccent),
-                    )
-                ]),
-                onPressed: () {
-                  filteringModalBottomSheet(
-                      context, dataTypes, brandName, filteringCallback);
-                },
-              ),
-            IconButton(
+
+      backgroundColor: Color(0xffaefeff),
+      body: SingleChildScrollView(
+        padding: EdgeInsets.all(16.0),
+        child: Column(
+          children: <Widget>[
+            /*IconButton(
               icon: Icon(
                 Icons.help_center,
                 color: Colors.white,
@@ -124,17 +83,7 @@ class SearchFoodsState extends State<SearchFoods> {
               onPressed: () {
                 helpModalBottomSheet(context);
               },
-            )
-          ],
-          title: Text('Nutrition Facts',
-              style: TextStyle(
-                  color: Theme.of(context).accentColor,
-                  fontWeight: FontWeight.bold))),
-      backgroundColor: Theme.of(context).accentColor,
-      body: SingleChildScrollView(
-        padding: EdgeInsets.all(16.0),
-        child: Column(
-          children: <Widget>[
+            ),*/
             TextField(
               autofocus: true,
               onEditingComplete: () => {
@@ -143,7 +92,7 @@ class SearchFoodsState extends State<SearchFoods> {
                 _searchFoods(),
                 FocusScope.of(context).unfocus()
               },
-              style: TextStyle(color: Theme.of(context).primaryColor),
+              style: TextStyle(color: Colors.black),
               decoration: InputDecoration(
                   border: OutlineInputBorder(
                     borderSide:
@@ -154,7 +103,7 @@ class SearchFoodsState extends State<SearchFoods> {
                   ),
                   focusedBorder: OutlineInputBorder(
                     borderSide:
-                    BorderSide(color: Theme.of(context).primaryColor),
+                    BorderSide(color:Colors.white),
                     borderRadius: const BorderRadius.all(
                       const Radius.circular(4.0),
                     ),
@@ -168,9 +117,9 @@ class SearchFoodsState extends State<SearchFoods> {
                     onPressed: () =>
                     {hasSearchableQuery = false, searchController.clear()},
                     icon: Icon(Icons.clear,
-                        color: Theme.of(context).primaryColor),
+                        color: Colors.black),
                   ),
-                  hintStyle: TextStyle(color: Theme.of(context).primaryColor),
+                  hintStyle: TextStyle(color: Colors.black),
                   hintText: "Search a food",
                   fillColor: Theme.of(context).accentColor),
               controller: searchController,
@@ -289,6 +238,8 @@ class SearchFoodsState extends State<SearchFoods> {
   }
 
   openDetailPage(SearchItem data, int index) {
+    print("Hippo");
+    print(data.foods[index].fdcId);
     final page = FoodDetailBlocProvider(
       //key: nu
       key: Key('gaja'),
