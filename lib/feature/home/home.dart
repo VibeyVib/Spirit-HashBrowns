@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:spirit/feature/authentication/signin_bloc.dart';
 import 'package:spirit/feature/budget/budget.dart';
 import 'package:spirit/Nutrition/foods.dart';
+import 'package:spirit/feature/chat_bot/chatbot.dart';
 import 'package:spirit/feature/mental_health/mental_health.dart';
 import 'package:spirit/feature/nutrition/nutrition.dart';
 
@@ -20,6 +21,7 @@ class _HomePageState extends State<HomePage> {
    MentalHealth(),
     Food(),
     Budget(),
+    Chatbot()
   ];
   void _onItemTapped(int index) {
     setState(() {
@@ -74,7 +76,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
                 label: 'Nutrition',
-                backgroundColor: Color(0xff35858b)
+                backgroundColor: Colors.black
             ),
             BottomNavigationBarItem(
               icon: Container(
@@ -86,7 +88,16 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
               label: 'Budget',
-              backgroundColor: Color(0xff4fbdba),
+                backgroundColor: Colors.black
+            ),
+            BottomNavigationBarItem(
+                icon: Container(
+                  width: 30,
+                  height: 30,
+                  child: Icon(Icons.chat_outlined, color: Colors.white, size: 30.0,)
+                ),
+                label: 'Chat Bot',
+                backgroundColor: Colors.black
             ),
           ],
           type: BottomNavigationBarType.shifting,
@@ -96,6 +107,7 @@ class _HomePageState extends State<HomePage> {
           onTap: _onItemTapped,
           elevation: 5
       ),
+
     );
   }
 

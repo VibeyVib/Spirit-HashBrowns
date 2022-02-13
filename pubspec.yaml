@@ -36,6 +36,7 @@ dependencies:
   gsheets: ^0.3.2
   cloud_firestore: ^2.4.0
   flutter_svg:
+  dialog_flowtter: ^0.3.1
 
   rxdart: ^0.27.3
 
